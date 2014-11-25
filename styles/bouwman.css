@@ -39,6 +39,10 @@ pre code{
 -webkit-transform:rotate(-7deg);
 }
 
+.author-face {
+  width: 350px !important;
+}
+
 .left{
   float:left;
 }

@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>ng-esri</title>
-        <meta name="description" content="Why we chose Backone, Marionette and Angular for ArcGIS for Open Data">
-        <meta name="author" content="Dave Bouwman">
+        <meta name="description" content="Mapas inteligentes de ArcGIS con AngularJS">
+        <meta name="author" content="Javier Abadía, a partir de una presentación de Dave Bouwman">
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -46,33 +46,33 @@
 
       <section  data-background="images/minimalistic_cats_space_suit.jpg">
     
-        <h1 class="center" style="color:white;">  "From the Lab..." </h1>
+        <h1 class="center" style="color:white;">  "Del laboratorio..." </h1>
         <br>
         <img class="rotatecw" src="http://maffrigby.com/wp-content/uploads/2014/07/angularjs-logo-trans.png">
   
       </section>
 
       <section  data-background="images/bacaon.gif"></section>
-      <section  data-background="http://gifs.joelglovier.com/chuck-norris/chuck-norris-split.gif"></section>
+      <section  data-background="http://gifs.joelglovier.com/chuck-norris/chuck-norris-split.gif"></section> <!-- WTF -->
       
       <section >
-        <h1 class="center">Angular</h1>
+        <h1 class="center">Angular.js</h1>
         <ul>
-          <li >"declarative"</li>
-          <li >data binding (aka magic)</li>
-          <li >unit and e2e testing</li>
-          <li >future aligned</li>
+          <li >"declarativo"</li>
+          <li class="fragment">data binding (aka magia)</li>
+          <li class="fragment">tests unitarios y e2e</li>
+          <li class="fragment">el futuro...</li>
         </ul>
       </section>
 
       <section> 
-        <h2>Search: Angular vs Backbone vs Dojo</h2>
+        <h2>Trends: Angular vs Backbone vs Dojo</h2>
         <img src="images/angular-vs-bb-vs-dj.png">
-        <h3 class="right fragment">"Enterprise"</h3>
+        <h3 class="right fragment">"Enterprise"</h3> <!-- WTF -->
       </section>
 
       <section > 
-        <h2>Awesome for...</h2>
+        <h2>Genial para...</h2>
         <img src="images/forms-over-data.png">
       </section>
 
@@ -86,27 +86,28 @@
 
       <section  data-background="images/minimalistic_cats_space_suit.jpg">
         <br>
-        <h1 class="center" style="color:white;">"declarative"?</h1>
+        <h1 class="center" style="color:white;">"declarativo"?</h1>
         <br>
-        <h2 class="center fragment"style="color:white;">wire things up via markup</h2>
+        <h2 class="center fragment"style="color:white;">conectar las cosas mediante markup</h2>
       </section>
 
       <section  data-background="images/minimalistic_cats_space_suit.jpg">
 
-        <a class="jsbin-embed" href="http://jsbin.com/hexan/2/embed?html,output&height=900px">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+        <a class="jsbin-embed" href="http://jsbin.com/qicesegude/1/embed?html,output&height=900px">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+        <!-- WTF -->
 
       </section>
 
   
       <section data-background="images/minimalistic_cats_space_suit.jpg">
-        <h1 class="center" style="color:white;">Angular Directives</h1>
+        <h1 class="center" style="color:white;">Directivas de Angular</h1>
         <br>
-        <h2 class="center fragment"style="color:white;">Create new 'html elements'</h2>
+        <h2 class="center fragment"style="color:white;">Crear nuevos 'elementos html'</h2>
       </section>      
 
       <section data-markdown>
           <script type="text/template">
-              ##This markup...
+              ##Este código...
               ```
               <map basemap="topo">
                 <layer url="http://services.arcgis.com/.../FeatureServer/0" />
@@ -118,45 +119,65 @@
       </section>
   
       <section>
-        <h2>becomes...</h2>
+        <h2>se convierte en...</h2>
         <img src="images/ng-map-example.png">
       </section>
 
 
       <section data-background="images/minimalistic_cats_space_suit.jpg">
         <br>
-        <h1 class="center" style="color:white;">Esri Angular Directives</h1>
+        <h1 class="center" style="color:white;">Directivas esri-angular</h1>
       </section>   
 
        <section data-background="images/minimalistic_cats_space_suit.jpg" >
     
-        <h1 class="center"style="color:white;" >  Shout outs </h1>
+        <h1 class="center"style="color:white;" >  Los culpables </h1>
         <br>
-        <img class="rotatecw" src="images/pat.jpeg">
-        <img class="rotateccw" src="images/tom.png">
-        <img class="rotatecw" src="images/matt.jpeg">
+        <img class="rotatecw author-face" src="images/pat.jpeg"> <!-- Patrick Arlt -->
+        <img class="rotateccw author-face" src="images/tom.png"> <!-- Tom Wayson -->
+        <img class="rotatecw author-face" src="images/matt.jpeg"> <!-- Matt Priour -->
+        <img class="rotateccw author-face" src="images/javier_abadia_2.jpg">
 
   
       </section>
 
-      <section data-background="images/minimalistic_cats_space_suit.jpg" > 
-        <h2 class="center" style="color:white;">Los Demos</h2>
-        <ul>
-          <li><a href="http://esri.github.io/angular-esri-map/app/simple-map.html" target="_blank">Simple Map</a></li>
-          <li><a href="http://esri.github.io/angular-esri-map/app/set-center-zoom.html" target="_blank">Center &amp; Zoom</a></li>
-          <li><a href="http://esri.github.io/angular-esri-map/app/set-basemap.html" target="_blank">Set Basemap</a></li>
-          <li><a href="http://esri.github.io/angular-esri-map/app/feature-layers.html" target="_blank">Feature Layers</a></li>
-          <li><a href="http://esri.github.io/angular-esri-map/app/legend.html" target="_blank">legend</a></li>
-        </ul>
-        
+      <section> 
+        <section data-background="images/minimalistic_cats_space_suit.jpg" >
+          <h2 class="center" style="color:white;"><a href="http://esri.github.io/angular-esri-map/" target="_blank">Las Demos</a></h2>
+          <ul>
+            <li><a href="http://esri.github.io/angular-esri-map/#/examples/simple-map" target="_blank">Simple Map</a></li>
+            <li><a href="http://esri.github.io/angular-esri-map/#/examples/center-and-zoom" target="_blank">Center &amp; Zoom</a></li>
+            <li><a href="http://esri.github.io/angular-esri-map/#/examples/basemap" target="_blank">Set Basemap</a></li>
+            <li><a href="http://esri.github.io/angular-esri-map/#/examples/feature-layers" target="_blank">Feature Layers</a></li>
+            <li><a href="http://esri.github.io/angular-esri-map/#/examples/legend" target="_blank">legend</a></li>
+            <li><a href="http://esri.github.io/angular-esri-map/#/examples/map-events" target="_blank">map events</a></li>
+            <li><a href="http://esri.github.io/angular-esri-map/#/examples/web-map" target="_blank">web-map</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>¿Qué es un webmap?</h2>
+          <h3>JSON que define el contenido de un mapa</h3><!-- WTF poner contenido del JSON -->
+          <p>&nbsp;</p>
+          <ul>
+            <li>capas</li>
+            <li>simbología</li>
+            <li>mapa de base</li>
+            <li>bookmarks</li>
+            <li>título, autor, créditos...</li>
+          </ul>
+          <p>&nbsp;</p>
+          <h3>Se crea en ArcGIS.com, se almacena en ArcGIS Online</h3>
+        </section>
+  
       </section>
       
       <section data-background="images/beard.gif"></section>
   
       <section  data-background="images/minimalistic_cats_space_suit.jpg">
-        <h1 class="center"style="color:white;">what if...</h1>
+        <h1 class="center"style="color:white;">y que tal si...</h1>
         <br><br>
-        <h1 class="right"style="color:white;">...styles</h1>
+        <h1 class="right"style="color:white;">...estilos?</h1>
       </section>
      
       <section data-markdown>
@@ -180,77 +201,79 @@
           </script>
       </section>
 
-      <section data-markdown>
-          <script type="text/template">
-              # 25 types of layers 
-              # 10 renderers
-              # 9 types of symbols
-              # 100s of events
-          </script>
+      <section>
+        <h1>25 tipos de capas</h1>
+        <h1>10 renderers</h1>
+        <h1>9 tipos de símbolos</h1>
+        <h1>100s de eventos</h1>
       </section>
 
       <section data-background="images/programmer.gif"></section>
 
-
-      <section data-markdown>
-          <script type="text/template">
-              ## Directive exposing the 
-              ## entire JS API?
-              <br><br>
-              <h1 class="fragment">No.</h1>
-          </script>
+      <section>
+        <h2>¿Directivas exponiendo<br>
+        la API JS de ArcGIS<br>
+        completa?<h2>
+        <br><br>
+        <h1 class="fragment">No.</h1>
       </section>
 
-      <section data-markdown>
-          <script type="text/template">
-              ## Directive exposing the 
-              ## entire Esri-Leaflet API?
-              <br><br>
-              # No.
-          </script>
+      <section>
+        <h2>¿Directivas exponiendo<br>
+        la API esri-leaflet<br>
+        completa?<h2>
+        <br><br>
+        <h1>No.</h1>
       </section>
 
       <section  data-background="images/minimalistic_cats_space_suit.jpg">
-        <h1 class="center"style="color:white;">Instead...</h1>
+        <h1 class="center"style="color:white;">Nosotros...</h1>
         <br>
-        <h2 class="right"style="color:white;">we believe...</h2>
+        <h2 class="right"style="color:white;">creemos...</h2>
       </section>
 
       <section  data-background="images/minimalistic_cats_space_suit.jpg">
-        <h1 class="center"style="color:white;">Directives</h1>
+        <h1 class="center"style="color:white;">las Directivas</h1>
         <br>
-        <h2 class="center"style="color:white;">"hide complexity"</h2>
+        <h2 class="center"style="color:white;">"ocultan complejidad"</h2>
         <br>
-        <h3 class="center"style="color:white;">From the person writing the markup</h3>
+        <h3 class="center"style="color:white;">a la persona que escribe el markup</h3>
       </section>
 
      <section  data-background="images/minimalistic_cats_space_suit.jpg">
-        <h2 class="center"style="color:white;">Enable You To</h2>
-        <h1 class="center"style="color:white;">Roll Your Own</h1>
+        <h2 class="center"style="color:white;">Rema tu</h2>
+        <h1 class="center"style="color:white;">propia canoa</h1>
       </section>
 
       <section data-markdown>
           <script type="text/template">
-              ### Encapsulate <em>your</em> logic and behavior 
+              ### Encapsula <em>TU</em> lógica y comportamiento
               <br>
 
               ```
-              <parcel-map pin="ABC123"></parcel-map>
+              <parcel-map ref-cat="ABC123"></parcel-map>
 
-              <hwy-map route="I25" from="123.2" to="144.6"></hwy-map>
+              <road-map road-id="N340" from-km="123.2" to-km="144.6"></road-map>
 
-              <flood-map county="larimer"></foodmap-map>
+              <flood-map provincia="granada"></flood-map>
               ```
               <br>
-              ### Easily brought into any Angular app
+              ### para incorporarlos <em>fácilmente</em> en cualquier app Angular.js
           </script>
       </section>
 
       <section  data-background="images/minimalistic_cats_space_suit.jpg">
-        <h3 class="center"style="color:white;">Example Repo</h3>
+        <h3 class="center"style="color:white;">Repo con ejemplos</h3>
 
-        <h3 class="center"style="color:white;">https://github.com/Esri/angular-esri-map</h3>
-        <h2 class="center"style="color:magenta;"><em>Coming soon!</em></h2>
+        <h3 class="center"style="color:white;"><a href='https://github.com/Esri/angular-esri-map'>https://github.com/Esri/angular-esri-map</a></h3>
+        <h2 class="center"style="color:magenta;"><em>Ya disponible!</em></h2>
+
+        <br><br><br>
+        <code class="center fragment" style="color:white">git clone https://github.com/Esri/angular-esri-map</code>
+        <br>
+        <br>
+        <code class="center fragment" style="color:white">bower install angular-esri-map</code>
+            
       </section>
 
 
@@ -277,7 +300,7 @@
         height: 900,
         minScale: 0.2,
         maxScale: 1.0,
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        theme: "moon", //Reveal.getQueryHash().theme, // available themes are in /css/theme
         transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
         transitionSpeed: 'fast',
 
@@ -307,7 +330,7 @@
           { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'scripts/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'scripts/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          //{ src: 'scripts/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'scripts/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
           { src: 'scripts/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
           { src: 'scripts/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
         ]
