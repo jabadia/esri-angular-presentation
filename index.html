@@ -12,7 +12,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <link rel="stylesheet" href="styles/reveal.min.css">
-        <link rel="stylesheet" href="styles/theme/esri-sharpie.css" id="theme">
+        <!-- <link rel="stylesheet" href="styles/theme/esri-sharpie.css" id="theme"> -->
+        <link rel="stylesheet" href="styles/theme/moon.css" id="theme">
         <link rel="stylesheet" href="lib/css/zenburn.css">
         <link rel="stylesheet" href="styles/uc2014.css">
         <link rel="stylesheet" href="styles/bouwman.css">
@@ -53,22 +54,56 @@
       </section>
 
       <section  data-background="images/bacaon.gif"></section>
-      <section  data-background="http://gifs.joelglovier.com/chuck-norris/chuck-norris-split.gif"></section> <!-- WTF -->
+      <!--<section  data-background="http://gifs.joelglovier.com/chuck-norris/chuck-norris-split.gif"></section>--> <!-- WTF -->
+      <section  data-background="images/pizza.gif"></section>
       
-      <section >
-        <h1 class="center">Angular.js</h1>
-        <ul>
-          <li >"declarativo"</li>
-          <li class="fragment">data binding (aka magia)</li>
-          <li class="fragment">tests unitarios y e2e</li>
-          <li class="fragment">el futuro...</li>
-        </ul>
-      </section>
-
       <section> 
         <h2>Trends: Angular vs Backbone vs Dojo</h2>
         <img src="images/angular-vs-bb-vs-dj.png">
         <h3 class="right fragment">"Enterprise"</h3> <!-- WTF -->
+      </section>
+
+      <section >
+        <section>
+          <h1 class="center">Angular.js</h1>
+          <ul>
+            <li >"declarativo"</li>
+            <li class="fragment">data binding (aka magia)</li>
+            <li class="fragment">tests unitarios y e2e</li>
+            <li class="fragment">el futuro...</li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="center">'declarativo' = 'extensión' de html</h1>
+          <ul>
+            <li class="fragment">nuevas tags <span class="fragment" style="color:white">a mi medida</span></li>
+            <li class="fragment">atributos <span style="color:white">ng-*</span></li>
+            <li class="fragment">templates <span style="color:white">{{ expresión }}</span></li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="center">directivas</h1>
+          <ul>
+            <li>es la forma de crear nuevas tags o atributos</li>
+            <li>escribimos código javascript para definir el comportamiento</li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="center">controladoras</h1>
+          <ul>
+            <li>es la forma de dar comportamiento a partes de mi página html</li>
+            <li>define el modelo y el comportamiento</li>
+            <li class="fragment">scope</li>
+            <li class="fragment">funciones</li>
+          </ul>
+        </section>
+      </section>
+
+      <section  data-background="images/minimalistic_cats_space_suit.jpg">
+
+        <a class="jsbin-embed" href="http://jsbin.com/qicesegude/1/embed?html,output&height=900px">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+        <!-- WTF -->
+
       </section>
 
       <section > 
@@ -76,9 +111,18 @@
         <img src="images/forms-over-data.png">
       </section>
 
+      <section>
+                <img src="images/epic-win-easier.gif" width="800px">
+      </section>
+
       <section> 
         <img src="images/web-gis.jpg">
       </section>
+
+      <section>
+                <img src="images/epic-win.gif" width="800px">
+      </section>
+
 
       <section> 
         <img src="images/forms-over-data-map.png">
@@ -89,13 +133,6 @@
         <h1 class="center" style="color:white;">"declarativo"?</h1>
         <br>
         <h2 class="center fragment"style="color:white;">conectar las cosas mediante markup</h2>
-      </section>
-
-      <section  data-background="images/minimalistic_cats_space_suit.jpg">
-
-        <a class="jsbin-embed" href="http://jsbin.com/qicesegude/1/embed?html,output&height=900px">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
-        <!-- WTF -->
-
       </section>
 
   
@@ -119,8 +156,59 @@
       </section>
   
       <section>
-        <h2>se convierte en...</h2>
-        <img src="images/ng-map-example.png">
+        <section>
+          <h2>se convierte en...</h2>
+          <img src="images/ng-map-example.png">
+        </section>
+        <section>
+          <img src="http://pro.arcgis.com/en/platform/the-arcgis-vision/GUID-49DA0BD9-C027-419B-BC70-D0DE154EB3AB-web.png" width="750px">
+        </section>
+        <section>
+          <h1 class="center">ArcGIS for Server</h1>
+          <ul>
+            <li>Servicios de Mapa</li>
+            <li>Servicios de Features</li>
+            <li>Servicios de Geo-Procesos</li>
+            <li>Servicios de Rutas</li>
+            <li>...</li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="center">ArcGIS Online</h1>
+          <ul>
+            <li>en la nube</li>
+            <li>SaaS</li>
+            <li><a href="http://www.arcgis.com" target="_blank">www.arcgis.com</a></li>
+            <li><a href="http://developers.arcgis.com" target="_blank">developers.arcgis.com</a></li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="center">Las APIs de ArcGIS</h1>
+          <ul class="fragment" style="margin-right: 80px; margin-bottom: 50px">
+            <li>iOS</li>
+            <li>Android</li>
+            <li>Windows Phone</li>
+          </ul>
+          <ul class="fragment" style="margin-right: 80px; margin-bottom: 50px">
+            <li>Java</li>
+            <li>.NET</li>
+            <li>Qt</li>
+            <li>MacOSX</li>
+          </ul>
+          <ul class="fragment" style="margin-right: 80px; margin-bottom: 50px">
+            <li>Silverlight</li>
+            <li>Flex</li>
+            <li><span style="color:white">JavaScript</span></li>
+          </ul>
+          <h1 class="center">REST</h1>
+          <ul class="fragment">
+            <li>ArcGIS for Server</li>
+            <li>ArcGIS Online</li>
+          </ul>
+        </section>
+        <section>
+          <img src="http://pro.arcgis.com/en/platform/the-arcgis-vision/GUID-49DA0BD9-C027-419B-BC70-D0DE154EB3AB-web.png" width="750px">
+        </section>
       </section>
 
 
@@ -143,15 +231,17 @@
 
       <section> 
         <section data-background="images/minimalistic_cats_space_suit.jpg" >
-          <h2 class="center" style="color:white;"><a href="http://jabadia.github.io/angular-esri-map/" target="_blank">Las Demos</a></h2>
+          <h2 class="center" style="color:white;"><a href="http://localhost:9002/" target="_blank">Las Demos</a></h2>
           <ul>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/simple-map" target="_blank">Simple Map</a></li>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/center-and-zoom" target="_blank">Center &amp; Zoom</a></li>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/basemap" target="_blank">Set Basemap</a></li>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/feature-layers" target="_blank">Feature Layers</a></li>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/legend" target="_blank">legend</a></li>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/map-events" target="_blank">map events</a></li>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/web-map" target="_blank">web-map</a></li>
+            <li><a href="http://localhost:9002/#/examples/simple-map" target="_blank">Simple Map</a></li>
+            <li><a href="http://localhost:9002/#/examples/center-and-zoom" target="_blank">Center &amp; Zoom</a></li>
+            <li><a href="http://localhost:9002/#/examples/basemap" target="_blank">Set Basemap</a></li>
+            <li><a href="http://localhost:9002/#/examples/feature-layers" target="_blank">Feature Layers</a></li>
+            <li><a href="http://localhost:9002/#/examples/legend" target="_blank">legend</a></li>
+            <li><a href="http://localhost:9002/#/examples/map-events" target="_blank">map events</a></li>
+            <li><a href="http://localhost:9002/#/examples/web-map" target="_blank">web-map</a></li>
+            <li><a href="http://localhost:9002/#/examples/gp" target="_blank">Geo Procesamiento</a></li>
+            <li><a href="http://localhost:9002/#/examples/gp2" target="_blank">otro GeoProcesamiento</a></li>
           </ul>
         </section>
 
@@ -201,6 +291,8 @@
           </script>
       </section>
 
+      <section></section>
+
       <section>
         <h1>25 tipos de capas</h1>
         <h1>10 renderers</h1>
@@ -247,7 +339,7 @@
 
       <section data-markdown>
           <script type="text/template">
-              ### Encapsula <em>TU</em> lógica y comportamiento
+              ### Encapsula \_TU\_ lógica y comportamiento
               <br>
 
               ```
@@ -258,7 +350,7 @@
               <flood-map provincia="granada"></flood-map>
               ```
               <br>
-              ### para incorporarlos <em>fácilmente</em> en cualquier app Angular.js
+              ### para incorporarlos \_fácilmente\_ en cualquier app Angular.js
           </script>
       </section>
 
@@ -266,7 +358,7 @@
         <h3 class="center"style="color:white;">Repo con ejemplos</h3>
 
         <h3 class="center"style="color:white;"><a href='https://github.com/Esri/angular-esri-map'>https://github.com/Esri/angular-esri-map</a></h3>
-        <h2 class="center"style="color:magenta;"><em>Ya disponible!</em></h2>
+        <h2 class="center"style="color:magenta;">Ya disponible!</h2>
 
         <br><br><br>
         <code class="center fragment" style="color:white">git clone https://github.com/Esri/angular-esri-map</code>
