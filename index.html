@@ -11,6 +11,8 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
         <link rel="stylesheet" href="styles/reveal.min.css">
         <!-- <link rel="stylesheet" href="styles/theme/esri-sharpie.css" id="theme"> -->
         <link rel="stylesheet" href="styles/theme/moon.css" id="theme">
@@ -35,6 +37,13 @@
         <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
 
+        <style>
+          .reveal i{
+            font-family: 'FontAwesome';
+            font-style: normal;
+          }
+        </style>
+
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -50,6 +59,12 @@
         <h1 class="center" style="color:white;">  "Del laboratorio..." </h1>
         <br>
         <img class="rotatecw" src="http://maffrigby.com/wp-content/uploads/2014/07/angularjs-logo-trans.png">
+        <br>
+        <div style="text-align:right; font-size:50px; line-height: 1.1em;">
+        <i class="fa fa-twitter"></i> #GeoDev<br>
+        @javierabadia<br>
+        @hhkaos<br> 
+        </div>
   
       </section>
 
@@ -71,6 +86,7 @@
             <li class="fragment">data binding (aka magia)</li>
             <li class="fragment">tests unitarios y e2e</li>
             <li class="fragment">el futuro...</li>
+            <li class="fragment"><i class="fa fa-arrow-circle-down"></i></li>
           </ul>
         </section>
         <section>
@@ -246,9 +262,9 @@
         </section>
 
         <section>
-          <h2>¿Qué es un webmap?</h2>
-          <h3>JSON que define el contenido de un mapa</h3><!-- WTF poner contenido del JSON -->
-          <p>&nbsp;</p>
+          <h1>¿Qué es un webmap?</h1>
+          <h2>JSON que define el contenido de un mapa <a href="http://javierabadia.maps.arcgis.com/sharing/rest/content/items/6c850a307d174760bc1a0335d5f1004c/data?f=json"><i class="fa fa-external-link"></i></a></h2><!-- WTF poner contenido del JSON -->
+          <br>
           <ul>
             <li>capas</li>
             <li>simbología</li>
@@ -256,8 +272,10 @@
             <li>bookmarks</li>
             <li>título, autor, créditos...</li>
           </ul>
-          <p>&nbsp;</p>
-          <h3>Se crea en ArcGIS.com, se almacena en ArcGIS Online</h3>
+          <br>
+          <br>
+          <br>
+          <h2>Se crea en ArcGIS.com, se almacena en ArcGIS Online</h2>
         </section>
   
       </section>
@@ -311,7 +329,7 @@
         <br><br>
         <h1 class="fragment" style="text-align:right;">No</h1>
       </section>
-
+<!--
       <section>
         <h1>¿Directivas exponiendo<br>
         la API esri-leaflet<br>
@@ -319,24 +337,29 @@
         <br><br>
         <h1 style="text-align:right;">No</h1>
       </section>
-
+-->
       <section  data-background="images/minimalistic_cats_space_suit.jpg">
-        <h1 class="center"style="color:white;">Nosotros...</h1>
+        <h1 class="center">Nosotros...</h1>
         <br>
-        <h2 class="right"style="color:white;">creemos...</h2>
+        <h2 class="right">...creemos...</h2>
       </section>
 
       <section  data-background="images/minimalistic_cats_space_suit.jpg">
-        <h1 class="center"style="color:white;">las Directivas</h1>
+        <h1 class="center">las Directivas</h1>
         <br>
-        <h2 class="center"style="color:white;">"ocultan complejidad"</h2>
+        <h2 class="center">"ocultan complejidad"</h2>
         <br>
-        <h3 class="center"style="color:white;">a la persona que escribe el markup</h3>
+        <h3 class="center">a la persona que escribe el markup</h3>
       </section>
 
      <section  data-background="images/minimalistic_cats_space_suit.jpg">
-        <h2 class="center"style="color:white;">Rema tu</h2>
-        <h1 class="center"style="color:white;">propia canoa</h1>
+        <h2 class="center">Rema</h2>
+        <h1 class="center">tu propia canoa</h1>
+        <br>
+        <div class="fragment">
+        <h2 class="center" style="color:white;">Háztelo</h2>
+        <h1 class="center" style="color:white;">tu mismo</h1>
+        </div>
       </section>
 
       <section data-markdown>
@@ -356,23 +379,39 @@
           </script>
       </section>
 
-     <section data-background="images/epic-win-slide.gif"></section>
-
       <section  data-background="images/minimalistic_cats_space_suit.jpg">
-        <h3 class="center"style="color:white;">Repo con ejemplos</h3>
+        <h2 class="center"style="color:white;">Repo con ejemplos</h2>
+        <br>
+        <h2 class="center"style="color:white; text-transform:none;"><a href='https://github.com/Esri/angular-esri-map'>https://github.com/Esri/angular-esri-map</a></h2>
+        <br>
+        <h1 class="center"style="color:magenta;">Ya disponible!</h1>
 
-        <h3 class="center"style="color:white;"><a href='https://github.com/Esri/angular-esri-map'>https://github.com/Esri/angular-esri-map</a></h3>
-        <h2 class="center"style="color:magenta;">Ya disponible!</h2>
-
-        <br><br><br>
-        <code class="center fragment" style="color:white">git clone https://github.com/Esri/angular-esri-map</code>
+        <br><br>
+        <div style="text-align:right;">
+        <code class="fragment" style="color:white;">git clone https://github.com/Esri/angular-esri-map</code>
         <br>
         <br>
-        <code class="center fragment" style="color:white">bower install angular-esri-map</code>
-            
+        <code class="fragment" style="color:white;">bower install angular-esri-map</code>
+        </div>    
       </section>
 
+     <section data-background="images/epic-win-slide.gif"></section>
 
+      <section>
+        <h1>¿Donde hay más como nosotros?</h1>
+        <br><br>
+        <div style="text-align:left; font-size:80px; line-height:1.1em;">
+          <a href="http://www.meetup.com/MadridJS">http://www.meetup.com/MadridJS/</a><br>
+          <a href="http://desarrolladores.esri.es">http://desarrolladores.esri.es</a><br>
+          <a href="http://www.meetup.com/Geo-Developers">http://www.meetup.com/Geo-Developers/</a><br>
+        </div>
+        <br>
+        <div style="text-align:right; font-size:80px; line-height:1.1em;">
+        <i class="fa fa-twitter"></i> @javierabadia<br>
+        <i class="fa fa-twitter"></i> @hhkaos<br>
+        </div>
+        
+      </section>
 
 
   </div>
