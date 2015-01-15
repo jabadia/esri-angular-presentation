@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+		<title>Mapa Sencillo + Locator</title>
+		<link rel="stylesheet" href="http://js.arcgis.com/3.12/esri/css/esri.css">
+		<style>
+			html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
+			body {
+				background-color: #FFF;
+				overflow: hidden;
+				font-family: "Trebuchet MS";
+			}
+			#container {
+				position: absolute;
+				left: 150px;
+				right: 150px;
+				top: 50px;
+				bottom: 10px;
+			}
+			#map {
+				width: 100%;
+				height: 90%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="map"></div>
+			<div id="address-box"><b>Dirección:</b> <span id="address"></span></div>
+		</div>
+
+		<script src="http://js.arcgis.com/3.12/"></script>
+		<script>
+			var map;
+
+			require(["esri/map", "esri/tasks/locator", "dojo/dom", "dojo/domReady!"], function(Map, Locator, dom) 
+			{
+				map = new Map("map", {
+					basemap: "topo",
+					center: [-3.692, 40.426], // lon, lat
+					zoom: 16
+				});
+
+				var locator = new Locator('http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer');
+
+				map.on('click', function(e)
+				{
+					//alert('clicked on ' + JSON.stringify(e.mapPoint));
+					dom.byId('address').innerHTML = "buscando..."
+					locator.locationToAddress(e.mapPoint, 100).then(function(res)
+					{
+						console.log(res);
+						dom.byId('address').innerHTML = res.address.Match_addr;
+					},
+					function(err)
+					{
+						dom.byId('address').innerHTML = "No se ha encontrado ninguna dirección cercana"; // err;
+					});
+
+				})
+			});
+		</script>
+	</body>
+</html>

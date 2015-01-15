@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+		<title>Mapa de Eventos</title>
+		<link rel="stylesheet" href="http://js.arcgis.com/3.12/esri/css/esri.css">
+		<style>
+			html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
+			body {
+				background-color: #FFF;
+				overflow: hidden;
+				font-family: "Trebuchet MS";
+			}
+			#container {
+				position: absolute;
+				left: 150px;
+				right: 150px;
+				top: 50px;
+				bottom: 10px;
+			}
+			#map {
+				width: 100%;
+				height: 90%;
+			}
+		</style>
+	</head>
+
+  <body>
+	<div id="container">
+		<div id="map"></div>
+		Datos procedentes de <a href="http://datos.madrid.es/portal/site/egob/menuitem.9e1e2f6404558187cf35cf3584f1a5a0/?vgnextoid=374512b9ace9f310VgnVCM100000171f5a0aRCRD" target="_blank">Portal de Datos Abiertos del Ayuntamiento de Madrid</a>
+	</div>
+	<script src="http://js.arcgis.com/3.12/"></script>
+	<script>
+	var map, layer;
+
+	function clean(s)
+	{
+		s = s.replace(/\?/g,'');
+		return s;
+	}
+
+	function cleanDate(s)
+	{
+		// yyyy-mm-dd HH:MM:SS.S
+		var m = s.match(/(\d{4})-(\d{2})-(\d{2}) \d{2}:\d{2}:\d{2}\.\d/)
+		// dd/mm/yyyy
+		s = [m[3], m[2], m[1]].join("/");
+		return s;
+	}
+
+	function getFeatureTitle(feature)
+	{
+		var MAX_TITLE_WIDTH = 25,
+		titulo = feature.attributes.TIPO;
+
+		if( !titulo )
+			return "Evento";
+
+		titulo = titulo.split("/");
+		titulo = titulo[titulo.length-1].replace(/[A-Z]/g, ' $&');
+
+		if( titulo.length > MAX_TITLE_WIDTH )
+		{
+			var spacePos = titulo.indexOf(' ', MAX_TITLE_WIDTH);
+			if( spacePos != -1 )
+				titulo = titulo.substr(0,spacePos) + "<br>" + titulo.substr(spacePos+1);
+		}
+		return titulo;
+	};
+
+	function getFeatureContent(feature)
+	{
+		var html = [];
+		html.push("<b>" + clean(feature.attributes.TITULO) + "</b>");
+		if( feature.attributes.DESCRIPCION )
+			html.push("<br>" + clean(feature.attributes.DESCRIPCION));
+		html.push("<a href='" + feature.attributes['URL-ACTIVIDAD'] + "'>+info</a>");
+		html.push("<br>")
+		if( feature.attributes.PRECIO )            
+			html.push("<br><b>Precio: </b>" + feature.attributes.PRECIO + "€");
+		if( feature.attributes.FECHA )
+			html.push("<br><b>Fechas: </b>" + cleanDate(feature.attributes.FECHA) );
+		if( feature.attributes['FECHA-FIN'] )
+			html.push(" hasta " + cleanDate(feature.attributes['FECHA-FIN']) );
+		html.push("<br>");
+		html.push("<br><b>Lugar: </b><a href='" + feature.attributes['URL-INSTALACION'] + "'> " + clean(feature.attributes['NOMBRE-INSTALACION']) + "</a>");
+		return html.join(" ");
+	};
+
+	/*
+		ID-EVENTO
+		TITULO
+		PRECIO,	GRATUITO
+		LARGA-DURACION,	DIAS-SEMANA, DIAS-EXCLUIDOS, FECHA,	FECHA-FIN, HORA
+		DESCRIPCION, CONTENT-URL, TITULO-ACTIVIDAD,	URL-ACTIVIDAD
+		URL-INSTALACION, NOMBRE-INSTALACION
+		COORDENADA-X
+		COORDENADA-Y
+		LATITUD
+		LONGITUD
+		TIPO
+	*/
+
+	require([
+		"esri/map", "esri/layers/CSVLayer", "esri/InfoTemplate", 
+		"esri/Color", "esri/symbols/SimpleMarkerSymbol", "esri/symbols/SimpleLineSymbol", "esri/renderers/SimpleRenderer",
+		"dojo/domReady!"], 
+	function(
+		Map, CSVLayer, InfoTemplate, 
+		Color, SimpleMarkerSymbol, SimpleLineSymbol, SimpleRenderer
+		)
+	{
+		esriConfig.defaults.io.proxyUrl = "/resource-proxy/PHP/proxy.php";
+		
+		map = new Map("map", {
+			basemap: "dark-gray",
+			center: [-3.692, 40.426], // longitude, latitude
+			zoom: 13
+		});
+
+		layer = new CSVLayer('http://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.csv',
+		{ 
+			columnDelimiter: ';',
+			latitudeFieldName: 'LATITUD',
+			longitudeFieldName: 'LONGITUD'
+		 });
+
+		var orangeRed = new Color([238, 69, 0, 0.5]); // hex is #ff4500
+		var blackLine = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0,0,0]),1);
+		var marker = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE, 15, blackLine, orangeRed);
+		var renderer = new SimpleRenderer(marker);
+		layer.setRenderer(renderer);
+
+		/*
+		var template = new InfoTemplate(getFeatureTitle, getFeatureContent);
+		layer.setInfoTemplate(template);
+		*/
+
+		map.addLayers([layer]);
+
+		layer.on('click', function(e)
+		{
+			var g = e.graphic;
+
+			if( ! g )
+				return;
+
+
+		})
+	  });
+	</script>
+  </body>
+</html>
