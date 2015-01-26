@@ -53,7 +53,8 @@
 					locator.locationToAddress(e.mapPoint, 100).then(function(res)
 					{
 						console.log(res);
-						dom.byId('address').innerHTML = res.address.Match_addr;
+						var link = "<a href='#' onclick='map.centerAndZoom([" + res.location.x + "," + res.location.y + "],19);'>zoom</a>";
+						dom.byId('address').innerHTML = (res.address.Match_addr || res.address.Address) + " | " + link;
 					},
 					function(err)
 					{
