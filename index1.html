@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ng-esri</title>
+        <meta name="description" content="Mapas inteligentes de ArcGIS con AngularJS">
+        <meta name="author" content="Javier Abadía, a partir de una presentación de Dave Bouwman">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles/reveal.min.css">
+        <!-- <link rel="stylesheet" href="styles/theme/esri-sharpie.css" id="theme"> -->
+        <link rel="stylesheet" href="styles/theme/moon.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="styles/uc2014.css">
+        <link rel="stylesheet" href="styles/bouwman.css">
+
+        <link rel="shortcut icon" href="/favicon.ico">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+          if( window.location.search.match( /print-pdf/gi ) ) {
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'styles/print/pdf.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+          }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+          .reveal i{
+            font-family: 'FontAwesome';
+            font-style: normal;
+          }
+        </style>
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1>Razones para usar Angular.js</h1>
+        <ul>
+          <li class="fragment">Porque es divertido</li>
+          <li class="fragment">Porque mola</li>
+          <li class="fragment">Porque lo usa la gente que mola</li>
+          <li class="fragment" style="color:white;">hipster developers</li>
+          <li class="fragment">Porque mi compañero de la lado no sabe</li>
+          <li class="fragment" style="color:lightgreen;">Para ser más productivos</li>
+        </ul>
+      </section>
+
+
+      <section >
+        <section>
+          <h1 class="center">¿Qué tiene de especial Angular.js?</h1>
+          <ul>
+            <li >"declarativo"</li>
+            <li class="fragment">data binding (aka magia)</li>
+            <li class="fragment">tests unitarios y e2e</li>
+            <li class="fragment">el futuro...</li>
+            <li class="fragment"><i class="fa fa-arrow-circle-down"></i></li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="center">'declarativo' = 'extensión' de html</h1>
+          <ul>
+            <li class="fragment">nuevas tags <span class="fragment" style="color:white">a mi medida</span></li>
+            <li class="fragment">atributos <span style="color:white">ng-*</span></li>
+            <li class="fragment">templates <span style="color:white">{{ expresión }}</span></li>
+          </ul>
+        </section>
+
+        <section  data-background="images/minimalistic_cats_space_suit.jpg">
+          <a class="jsbin-embed" href="http://jsbin.com/qicesegude/1/embed?html,output&height=900px">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+        </section>
+
+        <section>
+          <h1 class="center">controladoras</h1>
+          <ul>
+            <li>es la forma de dar comportamiento a partes de mi página html</li>
+            <li>define el modelo y el comportamiento</li>
+            <li class="fragment">scope</li>
+            <li class="fragment">funciones</li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="center">directivas</h1>
+          <ul>
+            <li>es la forma de crear nuevas tags o atributos</li>
+            <li>escribimos código javascript para definir el comportamiento</li>
+            <li style="color:white;">tricky</li>
+          </ul>
+        </section>
+        <section>
+          <video 
+            autoplay="TRUE"
+            controls="TRUE"
+            width="1000"
+           >
+            <source src="https://pbs.twimg.com/tweet_video/B8PCyxrIUAEaDv2.mp4">
+          </video>
+        </section>
+      </section>
+
+
+
+      <section > 
+        <h2>Genial para...</h2>
+        <img src="images/forms-over-data.png">
+      </section>
+
+      <section>
+                <img src="images/epic-win-easier.gif" width="800px">
+      </section>
+
+      <section> 
+        <img src="images/web-gis.jpg">
+      </section>
+
+      <section>
+                <img src="images/epic-win.gif" width="800px">
+      </section>
+
+
+      <section> 
+        <img src="images/forms-over-data-map.png">
+      </section>
+
+      <section  data-background="images/minimalistic_cats_space_suit.jpg">
+        <br>
+        <h1 class="center" style="color:white;">"declarativo"?</h1>
+        <br>
+        <h2 class="center fragment"style="color:white;">conectar las cosas mediante markup</h2>
+      </section>
+
+  
+      <section data-background="images/minimalistic_cats_space_suit.jpg">
+        <h1 class="center" style="color:white;">Directivas de Angular</h1>
+        <br>
+        <h2 class="center fragment"style="color:white;">Crear nuevos 'elementos html'</h2>
+      </section>      
+
+      <section data-markdown>
+          <script type="text/template">
+              ##Este código...
+              ```
+              <map basemap="topo">
+                <layer url="http://services.arcgis.com/.../FeatureServer/0" />
+                <layer url="http://services.arcgis.com/.../FeatureServer/1" />
+              </map>
+              ```
+
+          </script>
+      </section>
+  
+      <section>
+        <h2>se convierte en...</h2>
+        <img src="images/ng-map-example.png">
+      </section>
+
+<!--    </div></div></body> -->
+
+
+      <section data-background="images/minimalistic_cats_space_suit.jpg">
+        <br>
+        <h1 class="center" style="color:white;">Directivas esri-angular</h1>
+      </section>   
+
+       <section data-background="images/minimalistic_cats_space_suit.jpg" >
+    
+        <h1 class="center"style="color:white;" >  Los culpables </h1>
+        <br>
+        <img class="rotatecw author-face" src="images/pat.jpeg"> <!-- Patrick Arlt -->
+        <img class="rotateccw author-face" src="images/tom.png"> <!-- Tom Wayson -->
+        <img class="rotatecw author-face" src="images/matt.jpeg"> <!-- Matt Priour -->
+        <img class="rotateccw author-face" src="images/javier_abadia_2.jpg">
+  
+      </section>
+
+      <section>
+        <a href="index2.html">[next]</a>
+      </section>
+
+  </div>
+</div>
+
+
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="scripts/reveal.min.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        margin:0.1,
+        width: 1600,
+        height: 900,
+        minScale: 0.2,
+        maxScale: 1.0,
+        theme: "moon", //Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'fast',
+
+        center: false,
+
+        keyboard: {
+          13: function () {
+            var curSlide = Reveal.getCurrentSlide();
+
+            els = curSlide.getElementsByClassName('follow-link');
+
+            if (els && els.length) {
+              var el = els[0];
+              var evObj = document.createEvent('Events');
+              evObj.initEvent('click', true, false);
+              el.dispatchEvent(evObj);
+            } 
+          }
+        },
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'scripts/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'scripts/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'scripts/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'scripts/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'scripts/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+</body>
+</html>
