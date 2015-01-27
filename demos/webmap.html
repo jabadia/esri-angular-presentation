@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+		<title>Mapa Sencillo</title>
+		<link rel="stylesheet" href="http://js.arcgis.com/3.12/esri/css/esri.css">
+		<style>
+			html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
+			body {
+				background-color: #FFF;
+				overflow: hidden;
+				font-family: "Trebuchet MS";
+			}
+			#map {
+				position: absolute;
+				left: 150px;
+				right: 150px;
+				top: 50px;
+				bottom: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="map"></div>
+
+		<script src="http://js.arcgis.com/3.12/"></script>
+		<script>
+			var map;
+
+			require(["esri/map", "esri/arcgis/utils", "dojo/domReady!"], function(Map, arcgisUtils) 
+			{
+				// map = new Map("map", {
+				// 	basemap: "topo",
+				// 	center: [-3.702, 40.420], // lon, lat
+				// 	zoom: 19
+				// });
+
+				map = arcgisUtils.createMap("6c850a307d174760bc1a0335d5f1004c", "map");
+			});
+		</script>
+	</body>
+</html>

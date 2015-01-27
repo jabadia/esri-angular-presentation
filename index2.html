@@ -64,26 +64,62 @@
   
       </section>
 
+      <section>
+        <h1 style='position:relative; top:-170px;'>Mapa Sencillo</h1>
+        <iframe style='position:relative; top:-170px;' src="http://localhost:9002/#/examples/simple-map" frameborder="0"></iframe>
+      </section>
+
+      <section>
+        <h1 style='position:relative; top:-170px;'>Centro y Zoom</h1>
+        <iframe style='position:relative; top:-170px;' src="http://localhost:9002/#/examples/center-and-zoom" frameborder="0"></iframe>
+      </section>
+
+      <section>
+        <h1 style='position:relative; top:-170px;'>Mapa Base</h1>
+        <iframe style='position:relative; top:-170px;' src="http://localhost:9002/#/examples/basemap" frameborder="0"></iframe>
+      </section>
+
+      <!-- este ejemplo NO funciona bien -->
+      <!-- 
+      <section>
+        <h1 style='position:relative; top:-170px;'>Eventos del Mapa</h1>
+        <iframe style='position:relative; top:-170px;' src="http://localhost:9002/#/examples/map-events" frameborder="0"></iframe>
+      </section>
+      -->
+
+      <section>
+        <h1 style='position:relative; top:-170px;'>Feature Layers</h1>
+        <iframe style='position:relative; top:-170px;' src="http://localhost:9002/#/examples/feature-layers" frameborder="0"></iframe>
+      </section>
+
+      <section>
+        <h1 style='position:relative; top:-170px;'>Leyenda</h1>
+        <iframe style='position:relative; top:-170px;' src="http://localhost:9002/#/examples/legend" frameborder="0"></iframe>
+      </section>
+
+      <!--
       <section> 
         <section data-background="images/minimalistic_cats_space_suit.jpg" >
           <h2 class="center" style="color:white;"><a href="http://jabadia.github.io/angular-esri-map/" target="_blank">Las Demos</a></h2>
           <ul>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/simple-map" target="_blank">Simple Map</a></li>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/center-and-zoom" target="_blank">Center &amp; Zoom</a></li>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/basemap" target="_blank">Set Basemap</a></li>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/feature-layers" target="_blank">Feature Layers</a></li>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/legend" target="_blank">legend</a></li>
-            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/map-events" target="_blank">map events</a></li>
+x            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/simple-map" target="_blank">Simple Map</a></li>
+ x           <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/center-and-zoom" target="_blank">Center &amp; Zoom</a></li>
+  x          <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/basemap" target="_blank">Set Basemap</a></li>
+x            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/feature-layers" target="_blank">Feature Layers</a></li>
+x            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/legend" target="_blank">legend</a></li>
+x            <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/map-events" target="_blank">map events</a></li>
             <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/web-map" target="_blank">web-map</a></li>
             <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/gp" target="_blank">Geo Procesamiento</a></li>
             <li><a href="http://jabadia.github.io/angular-esri-map/#/examples/gp2" target="_blank">otro GeoProcesamiento</a></li>
           </ul>
         </section>
-
+        -->
         <section>
+          <div style='position:relative; top:-130px;'>
           <h1>¿Qué es un webmap?</h1>
-          <h2>JSON que define el contenido de un mapa <a href="http://javierabadia.maps.arcgis.com/sharing/rest/content/items/6c850a307d174760bc1a0335d5f1004c/data?f=json"><i class="fa fa-external-link"></i></a></h2><!-- WTF poner contenido del JSON -->
           <br>
+          <div class="fragment">
+          <h2>Es la definición del contenido de un mapa <a href="http://javierabadia.maps.arcgis.com/home/webmap/viewer.html?webmap=6c850a307d174760bc1a0335d5f1004c" target="_blank"><i class="fa fa-external-link"></i></a></h2>
           <ul>
             <li>capas</li>
             <li>simbología</li>
@@ -91,20 +127,60 @@
             <li>bookmarks</li>
             <li>título, autor, créditos...</li>
           </ul>
+          </div>
+          <br>
+          <div class="fragment">
+          <h2>Se crea y se almacena en ArcGIS Online</h2>
+          <ul>
+            <li>Identificador: <span style="font-size:40px;color:white">6c850a307d174760bc1a0335d5f1004c</span></li>
+            <li>JSON accesible a través de REST <a href="http://javierabadia.maps.arcgis.com/sharing/rest/content/items/6c850a307d174760bc1a0335d5f1004c/data?f=json" target="_blank"><i class="fa fa-external-link"></i></a></li><!-- WTF poner contenido del JSON -->
+            <li>La API de Javascript de ArcGIS sabe cargarlos <a href="demos/webmap.html" target="_blank"><i class="fa fa-external-link"></i></a></li>
+          </ul>
           <br>
           <br>
-          <br>
-          <h2>Se crea en ArcGIS.com, se almacena en ArcGIS Online</h2>
+          <a href="http://javierabadia.maps.arcgis.com/sharing/rest/content/items/6c850a307d174760bc1a0335d5f1004c/data?f=json" target="_blank">http://javierabadia.maps.arcgis.com/sharing/rest/content/items/[id]/data?f=json</a>
+          </div>
+          </div>
         </section>  
+      
+      <section>
+        <h1 style='position:relative; top:-170px;'>Webmap</h1>
+        <iframe style='position:relative; top:-170px;' src="http://localhost:9002/#/examples/web-map" frameborder="0"></iframe>
       </section>
 
+      <section>
+        <h1>Geo-Procesos</h1>
+        <div>
+        <img width="800" src="images/model_builder.png" alt="">
+        </div>
+        <ul>
+          <li>Parámetros de Entrada</li>
+          <li>Cálculos geográficos/espaciales <a href="http://demos2.esri.es/arcgis/rest/services/GP_Demo/mdt200/MapServer?f=jsapi" target="_blank">p.ej.</a></li>
+          <li>Resultados</li>
+          <li class="fragment"><a href="http://demos2.esri.es/arcgis/rest/services/GP_Demo/Watershed/GPServer" target="_blank">API REST ;-)</a> </li>
+        </ul>
+      </section>
+
+      <section>
+        <h1 style='position:relative; top:-170px;'>Geo-Procesos</h1>
+        <iframe style='position:relative; top:-170px;' src="http://localhost:9002/#/examples/gp" frameborder="0"></iframe>
+      </section>
       
+      <!-- no chuta esta demo
+      <section>
+        <h1 style='position:relative; top:-170px;'>Geo-Procesos (II)</h1>
+        <iframe style='position:relative; top:-170px;' src="http://localhost:9002/#/examples/gp2" frameborder="0"></iframe>
+      </section>
+      -->
+      
+      <section data-background="images/happy-dev.gif"></section>
+
       <section data-background="images/beard.gif"></section>
   
       <section  data-background="images/minimalistic_cats_space_suit.jpg">
         <h1 class="center"style="color:white;">y que tal si...</h1>
         <br><br>
-        <h1 class="right"style="color:white;">...estilos?</h1>
+        <h1 class="right fragment">...estilos?</h1>
       </section>
      
 
@@ -129,7 +205,6 @@
           </script>
       </section>
 
-      <section data-background="images/happy-dev.gif"></section>
       <section data-background="images/fast-typing.gif"></section>
       <section data-background="images/typing-code.gif"></section>
 
